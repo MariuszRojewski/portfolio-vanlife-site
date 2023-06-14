@@ -2,7 +2,7 @@ import React from "react";
 import heroImg from "./assets/images/about-hero.jpg";
 import { Link } from "react-router-dom";
 
-function About() {
+function AboutPage() {
   return (
     <div className="about-page-container">
       <img src={heroImg} className="about-hero-image" alt="" />
@@ -32,4 +32,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;
