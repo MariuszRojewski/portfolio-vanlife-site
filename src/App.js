@@ -2,6 +2,7 @@ import React from "react";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import VansPage from "./pages/VansPage";
+import VanDetails from "./pages/templates/VanDetails";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import "./server";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/vans" element={<VansPage />} />
+        <Route path="/vans/:id" element={<VanDetails />} />
       </Routes>
     </BrowserRouter>
   );
