@@ -1,5 +1,5 @@
 import React from "react";
-import Vans from "./components/Vans";
+import Vans from "./Vans";
 
 function VansPage() {
   return (

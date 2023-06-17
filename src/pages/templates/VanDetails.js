@@ -11,8 +11,6 @@ function VanDetails() {
       .then((data) => setVanData(data.vans));
   }, [params.id]);
 
-  console.log("vanData: ", vanData);
-
   return (
     <div className="van-detail-container">
       {vanData ? (
