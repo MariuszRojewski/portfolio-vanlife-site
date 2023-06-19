@@ -8,10 +8,12 @@ import VansPage from "./pages/Vans/VansPage";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
+import Vans from "./pages/Host/Vans";
 // Components
 import LayoutHost from "./pages/components/LayoutHost";
 import VanDetails from "./pages/templates/VanDetails";
 import Layout from "./pages/components/Layout";
+import HostVanDetails from "./pages/templates/HostVanDetails";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<Vans />} />
+            <Route path="vans/:id" element={<HostVanDetails />} />
           </Route>
         </Route>
       </Routes>
