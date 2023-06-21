@@ -5,14 +5,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import VansPage from "./pages/Vans/VansPage";
-import Dashboard from "./pages/Host/Dashboard";
-import Income from "./pages/Host/Income";
-import Reviews from "./pages/Host/Reviews";
-import Vans from "./pages/Host/Vans";
+import Dashboard from "./pages/Host/HostDashboard";
+import Income from "./pages/Host/HostIncome";
+import Reviews from "./pages/Host/HostReviews";
+import Vans from "./pages/Host/HostVans";
 // Components
-import LayoutHost from "./pages/components/LayoutHost";
-import VanDetails from "./pages/templates/VanDetails";
 import Layout from "./pages/components/Layout";
+import LayoutHost from "./pages/components/LayoutHost";
+// Templates
+import VanDetails from "./pages/templates/VanDetails";
 import HostVanDetails from "./pages/templates/HostVanDetails";
 
 function App() {
