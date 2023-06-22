@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-function LayoutHost() {
+function LayoutVans() {
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "underline",
@@ -10,31 +10,25 @@ function LayoutHost() {
 
   return (
     <>
-      <nav className="host-nav">
+      <nav className="host-van-detail-nav">
         <NavLink
-          to=".."
-          relative="path"
+          to="."
+          end
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
-          Dashboard
+          Inforamtion
         </NavLink>
         <NavLink
-          to="income"
+          to="pricing"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
-          Income
+          Pricing
         </NavLink>
         <NavLink
-          to="reviews"
+          to="photos"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
-          Reviews
-        </NavLink>
-        <NavLink
-          to="vans"
-          style={({ isActive }) => (isActive ? activeStyles : null)}
-        >
-          Vans
+          Photos
         </NavLink>
       </nav>
       <Outlet />
@@ -42,4 +36,4 @@ function LayoutHost() {
   );
 }
 
-export default LayoutHost;
+export default LayoutVans;
