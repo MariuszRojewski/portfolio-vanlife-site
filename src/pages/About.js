@@ -1,11 +1,11 @@
 import React from "react";
-import heroImg from "./assets/images/about-hero.jpg";
+import bgImg from "../assets/images/about-hero.jpg";
 import { Link } from "react-router-dom";
 
-function AboutPage() {
+function About() {
   return (
     <div className="about-page-container">
-      <img src={heroImg} className="about-hero-image" alt="" />
+      <img src={bgImg} className="about-hero-image" />
       <div className="about-page-content">
         <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
         <p>
@@ -32,4 +32,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default About;

@@ -1,12 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 function HostVanPricing() {
+  const { currentVan } = useOutletContext();
   return (
-    <div>
-      <h2>Host Van Pricing</h2>
-      {/* <Outlet /> */}
-    </div>
+    <h3 className="host-van-price">
+      ${currentVan.price}
+      <span>/day</span>
+    </h3>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
-function Header() {
+function LayoutHost() {
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "underline",
@@ -9,36 +9,40 @@ function Header() {
   };
 
   return (
-    <header>
-      <Link to="/">#VANLIFE</Link>
-      <nav>
+    <>
+      <nav className="host-nav">
         <NavLink
-          to="/"
+          to="."
+          end
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
-          Home
+          Dashboard
         </NavLink>
+
         <NavLink
-          to="/host"
+          to="income"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
-          Host
+          Income
         </NavLink>
+
         <NavLink
-          to="/about"
-          style={({ isActive }) => (isActive ? activeStyles : null)}
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/vans"
+          to="vans"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
           Vans
         </NavLink>
+
+        <NavLink
+          to="reviews"
+          style={({ isActive }) => (isActive ? activeStyles : null)}
+        >
+          Reviews
+        </NavLink>
       </nav>
-    </header>
+      <Outlet />
+    </>
   );
 }
 
-export default Header;
+export default LayoutHost;

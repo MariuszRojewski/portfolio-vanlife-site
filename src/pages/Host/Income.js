@@ -1,11 +1,7 @@
 import React from "react";
 
 function Income() {
-  return (
-    <div>
-      <h2>Income</h2>
-    </div>
-  );
+  return <h1>Income page goes here</h1>;
 }
 
 export default Income;

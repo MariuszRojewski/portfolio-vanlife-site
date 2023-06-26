@@ -9,26 +9,26 @@ function Vans() {
       .then((data) => setVans(data.vans));
   }, []);
 
-  const mapedVans = vans.map((van) => {
-    return (
+  const vanElements = vans.map((van) => (
+    <div key={van.id} className="van-tile">
       <Link to={`/vans/${van.id}`}>
-        <div key={van.id} className="van-title">
-          <img src={van.imageUrl} alt="" />
-          <div className="van-info">
-            <h3>{van.name}</h3>
-            <p>
-              <span>${van.price}</span>/day
-            </p>
-          </div>
-          <i className={`van-type ${van.type} selected`}>{van.type}</i>
+        <img src={van.imageUrl} />
+        <div className="van-info">
+          <h3>{van.name}</h3>
+          <p>
+            ${van.price}
+            <span>/day</span>
+          </p>
         </div>
+        <i className={`van-type ${van.type} selected`}>{van.type}</i>
       </Link>
-    );
-  });
+    </div>
+  ));
 
   return (
     <div className="van-list-container">
-      <div className="van-list">{mapedVans}</div>
+      <h1>Explore our van options</h1>
+      <div className="van-list">{vanElements}</div>
     </div>
   );
 }
