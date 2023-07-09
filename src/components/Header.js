@@ -1,4 +1,5 @@
 import React from "react";
+import userIcon from "../assets/images/avatar-icon.png";
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
@@ -32,6 +33,9 @@ function Header() {
         >
           Vans
         </NavLink>
+        <Link to="login" className="login-link">
+          <img src={userIcon} className="login-icon" />
+        </Link>
       </nav>
     </header>
   );

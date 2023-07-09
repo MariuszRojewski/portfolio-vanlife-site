@@ -20,20 +20,26 @@ import HostVanPhotos from "./pages/Host/HostVanPhotos";
 import Layout from "./components/Layout";
 import HostLayout from "./components/HostLayout";
 import NotFound from "./pages/NotFound";
+import Error from "./components/Error";
+import Login from "./pages/Login";
 
 import "./server";
 
 // UCZ SIĘ OD TEGO MIEJSCA
-// https://scrimba.com/learn/reactrouter6/loaders-intro-coe51485aa8c4155663d64867
-
-const dupa = {};
+// https://scrimba.com/learn/reactrouter6/note-from-the-future-importing-image-assets-in-vite-co42c4499bfc6b53a80b24d20
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} loader={vansLoader} />
+      <Route path="login" element={<Login />} />
+      <Route
+        path="vans"
+        element={<Vans />}
+        loader={vansLoader}
+        errorElement={<Error />}
+      />
       <Route path="vans/:id" element={<VanDetail />} />
 
       <Route path="host" element={<HostLayout />}>
