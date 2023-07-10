@@ -26,7 +26,7 @@ import Login from "./pages/Login";
 import "./server";
 
 // UCZ SIĘ OD TEGO MIEJSCA
-// https://scrimba.com/learn/reactrouter6/note-from-the-future-importing-image-assets-in-vite-co42c4499bfc6b53a80b24d20
+// https://scrimba.com/learn/reactrouter6/aside-challenge-move-remaining-fetching-to-loaders-part-1-coaa74c08b70ab545c8da7bf9
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,20 +37,68 @@ const router = createBrowserRouter(
       <Route
         path="vans"
         element={<Vans />}
-        loader={vansLoader}
         errorElement={<Error />}
+        loader={vansLoader}
       />
       <Route path="vans/:id" element={<VanDetail />} />
 
       <Route path="host" element={<HostLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />
-        <Route path="reviews" element={<Reviews />} />
-        <Route path="vans" element={<HostVans />} />
-        <Route path="vans/:id" element={<HostVanDetail />}>
-          <Route index element={<HostVanInfo />} />
-          <Route path="pricing" element={<HostVanPricing />} />
-          <Route path="photos" element={<HostVanPhotos />} />
+        <Route
+          index
+          element={<Dashboard />}
+          loader={async () => {
+            return null;
+          }}
+        />
+        <Route
+          path="income"
+          element={<Income />}
+          loader={async () => {
+            return null;
+          }}
+        />
+        <Route
+          path="reviews"
+          element={<Reviews />}
+          loader={async () => {
+            return null;
+          }}
+        />
+        <Route
+          path="vans"
+          element={<HostVans />}
+          loader={async () => {
+            return null;
+          }}
+        />
+        <Route
+          path="vans/:id"
+          element={<HostVanDetail />}
+          loader={async () => {
+            return null;
+          }}
+        >
+          <Route
+            index
+            element={<HostVanInfo />}
+            loader={async () => {
+              return null;
+            }}
+          />
+          <Route
+            path="pricing"
+            element={<HostVanPricing />}
+            loader={async () => {
+              return null;
+            }}
+          />
+          <Route
+            path="photos"
+            element={<HostVanPhotos />}
+            loader={async () => {
+              return null;
+            }}
+          />
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />
