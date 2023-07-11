@@ -2,22 +2,16 @@ import React from "react";
 import { Link, useSearchParams, useLoaderData } from "react-router-dom";
 import { getVans } from "../../api";
 
-// Ostatnia lekcja tutaj:
-// https://scrimba.com/learn/reactrouter6/handling-errors-coa134c21886202bc2896b405
-
 export function loader() {
   return getVans();
 }
 
 export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
-  // const [vans, setVans] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  const vans = useLoaderData();
 
   const typeFilter = searchParams.get("type");
-
-  const vans = useLoaderData();
 
   const displayedVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
@@ -54,10 +48,6 @@ export default function Vans() {
       }
       return prevParams;
     });
-  }
-
-  if (loading) {
-    return <h1>Loading...</h1>;
   }
 
   if (error) {
