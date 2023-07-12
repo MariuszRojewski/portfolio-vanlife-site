@@ -1,9 +1,11 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
 import {
+  RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  RouterProvider,
+  Link,
 } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -19,17 +21,14 @@ import HostVanDetail, {
 import HostVanInfo from "./pages/Host/HostVanInfo";
 import HostVanPricing from "./pages/Host/HostVanPricing";
 import HostVanPhotos from "./pages/Host/HostVanPhotos";
+import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
 import Layout from "./components/Layout";
 import HostLayout from "./components/HostLayout";
-import NotFound from "./pages/NotFound";
 import Error from "./components/Error";
-import Login from "./pages/Login";
 import { requireAuth } from "./utils";
 
 import "./server";
-
-// UCZ SIĘ OD TEGO MIEJSCA
-// https://scrimba.com/learn/reactrouter6/aside-challenge-move-remaining-fetching-to-loaders-part-1-coaa74c08b70ab545c8da7bf9
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,6 +43,10 @@ const router = createBrowserRouter(
         loader={vansLoader}
       />
       <Route path="vans/:id" element={<VanDetail />} loader={vanDetailLoader} />
+      {/**
+       * Challenge:
+       * Include the `await requireAuth()` everywhere it's needed!
+       */}
 
       <Route path="host" element={<HostLayout />}>
         <Route

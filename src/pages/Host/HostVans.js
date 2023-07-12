@@ -10,7 +10,6 @@ export async function loader() {
 
 export default function HostVans() {
   const vans = useLoaderData();
-  console.log("VANS KURWA: ", vans);
 
   const hostVansEls = vans.map((van) => (
     <Link to={van.id} key={van.id} className="host-van-link-wrapper">
