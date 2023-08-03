@@ -2,6 +2,9 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 // Your web app's Firebase configuration
+
+// Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDWf7E61xrY7sYtr3s9QYVV68nmvOfvm84',
   authDomain: 'van-life-bd185.firebaseapp.com',
@@ -12,26 +15,27 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
+console.log('APP: ', app);
+
 const db = getFirestore(app);
 
-console.log('DBBBBBB: ', db);
-
-// Są błedy, trzeba to jakoś naprawic
-// Firebase masz na webkonserwis
-
-// [2023-08-02T15:39:43.174Z]  @firebase/firestore: Firestore (10.1.0_lite): RPC_ERROR HTTP error has no status logger.ts:116:6
-// Uncaught FirebaseError: Request failed with error: undefined
+console.log('DB: ', db);
 
 const vansCollectionRef = collection(db, 'vans');
 
+console.log('vansCollectionRef: ', vansCollectionRef);
+
 export async function getVans() {
   const querySnapshot = await getDocs(vansCollectionRef);
+  console.log('DUPA: ', querySnapshot);
+
   const dataArr = querySnapshot.docs.map(doc => ({
     ...doc.data(),
     id: doc.id,
   }));
-  console.log(dataArr);
+  console.log('dataArr: ', dataArr);
   return dataArr;
 }
 
